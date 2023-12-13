@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": true
+      }
+    ],
+    "import/no-unresolved": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling"], ["index", "object", "type", "unknown"]],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "orderImportKind": "asc", "caseInsensitive": true }
+      }
+    ]
+  }
 }
